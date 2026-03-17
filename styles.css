@@ -1,6 +1,6 @@
 .hero {
     height: 100vh;
-    background: linear-gradient(0deg, #0c1f35 0%, #0a2f23 50%, #1e3f32 100%);
+    background:#0c1f35;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: #fdeefa;
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
@@ -31,8 +31,8 @@
 
 .submit-btn {
     display: inline-block;
-    background: #0a2f23;
-    color: white;
+    background: #D8315B;
+    color: #E6EEF7;
     font-size: 1.6rem;
     font-weight: bold;
     padding: 18px 52px;
@@ -40,11 +40,11 @@
     text-decoration: none;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 3px solid #0c1f35;
+    border: 3px solid #E6EEF7;
 }
 
 .submit-btn:hover {
     transform: scale(1.05) translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    background: #1e3f32;
+    background: #B72247;
 }

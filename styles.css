@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .top-banner {
     background: #0c1f35;
     color: white;
@@ -26,6 +27,7 @@ body {
     font-weight: 600;
     width: 100%;
 }
+
 
 .hero {
     min-height: 100vh;
@@ -87,11 +89,87 @@ body {
 .corner-crunch {
     position: absolute;
     bottom: 40px;
-    left:10px;
+    left: 10px;
     width: 180px;
     height: auto;
     transform: scaleX(-1);
     z-index: 5;
+}
+
+
+.faq-bubble {
+    position: absolute;
+
+    bottom: 230px; 
+    left: 90px; 
+
+    z-index: 10;
+
+    background: linear-gradient(
+        135deg,
+        #7de8c8 0%, 
+        #2a9d7f 40%,     
+        #1a6b58 100%   
+    );
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 12px 22px;
+    min-width: 80px;
+
+
+    box-shadow:
+        0 0 0 2.5px rgba(100, 182, 241, 0.45),
+        0 4px 18px rgba(42, 157, 127, 0.6),
+        0 1px 0 rgba(255,255,255,0.2) inset;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: visible;
+}
+
+.faq-bubble .bubble-tail {
+    position: absolute;
+    bottom: -12px;
+    left: 18px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 13px solid #1a6b58;
+    filter: drop-shadow(0 2px 3px rgba(42, 157, 127, 0.4));
+}
+
+
+.faq-bubble .bubble-shine {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    right: 10px;
+    height: 38%;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.38) 0%,
+        rgba(255,255,255,0.0) 100%
+    );
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+}
+
+.faq-bubble:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow:
+        0 0 0 2.5px rgba(100, 182, 241, 0.65),
+        0 8px 28px rgba(42, 157, 127, 0.75),
+        0 1px 0 rgba(255,255,255,0.2) inset;
+}
+
+.faq-bubble:active {
+    transform: scale(0.97) translateY(0);
 }
 
 .paths-section {
@@ -189,6 +267,152 @@ body {
     line-height: 1.45;
 }
 
+/* ── FAQ Modal Overlay ── */
+.faq-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(8, 18, 32, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.faq-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.faq-modal {
+    background: linear-gradient(160deg, #142236 0%, #0c1f35 100%);
+    border: 1.5px solid rgba(100, 182, 241, 0.3);
+    border-radius: 24px;
+    padding: 48px 44px 44px;
+    max-width: 580px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 24px 60px rgba(0,0,0,0.6),
+        0 0 40px rgba(42, 157, 127, 0.15);
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.faq-overlay.active .faq-modal {
+    transform: translateY(0) scale(1);
+}
+
+.faq-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.faq-close:hover {
+    color: white;
+    background: rgba(42, 157, 127, 0.3);
+}
+
+.faq-title {
+    font-family: 'Vipnagorgialla', 'Space Grotesk', sans-serif;
+    color: white;
+    font-size: 2rem;
+    margin: 0 0 32px;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    transition: border-color 0.2s;
+}
+
+.faq-item.open {
+    border-color: rgba(100, 182, 241, 0.5);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: left;
+    padding: 18px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s;
+}
+
+.faq-question:hover {
+    background: rgba(42, 157, 127, 0.12);
+}
+
+.faq-arrow {
+    font-size: 1.2rem;
+    color: #64b6f1;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    padding: 0 20px;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    padding: 0 20px 18px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: rgba(255,255,255,0.78);
+    font-size: 1rem;
+    line-height: 1.55;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 14px;
+}
+
+/* ── Responsive ── */
 @media (max-width: 700px) {
     .paths-container {
         grid-template-columns: 1fr;
@@ -213,6 +437,21 @@ body {
     .corner-crunch {
         width: 120px;
         bottom: 30px;
-        right: 20px;
+        left: 10px;
+    }
+
+    .faq-bubble {
+        bottom: 200px;
+        left: 24px; 
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+
+    .faq-modal {
+        padding: 36px 24px 32px;
+    }
+
+    .faq-title {
+        font-size: 1.5rem;
     }
 }

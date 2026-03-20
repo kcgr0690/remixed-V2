@@ -164,7 +164,7 @@ body {
     transform: scale(1.08) translateY(-3px);
     box-shadow:
         0 0 0 2.5px rgba(100, 182, 241, 0.65),
-        0 8px 28px rgba(128, 131, 131, 0.75),
+        0 8px 28px rgba(42, 157, 127, 0.75),
         0 1px 0 rgba(255,255,255,0.2) inset;
 }
 
@@ -267,6 +267,7 @@ body {
     line-height: 1.45;
 }
 
+/* ── FAQ Modal Overlay ── */
 .faq-overlay {
     position: fixed;
     inset: 0;
@@ -289,7 +290,7 @@ body {
 
 .faq-modal {
     background: linear-gradient(160deg, #142236 0%, #0c1f35 100%);
-    border: 1.5px solid rgba(52, 168, 250, 0.527);
+    border: 1.5px solid rgba(100, 182, 241, 0.3);
     border-radius: 24px;
     padding: 48px 44px 44px;
     max-width: 580px;

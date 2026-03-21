@@ -10,34 +10,32 @@
     box-sizing: border-box;
 }
 
-/* Full-page note pattern on body so it covers hero + paths section */
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    /* Two staggered layers, 300×300px tiles, notes at 55–60px, opacity ~0.13–0.15 */
-    background-color: #0c1f35;
-    background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(42,157,127,0.11)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(100,182,241,0.11)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(42,157,127,0.12)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(100,182,241,0.10)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
-    background-size: 300px 300px, 300px 300px;
-    background-position: 0 0, 150px 150px;
 }
 
 .top-banner {
-    background: #0c1f35;
+    background: #e8427a;
     color: white;
     text-align: center;
     padding: 14px 20px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
+    letter-spacing: 0.01em;
 }
 
 .hero {
     min-height: 100vh;
-    background-color: transparent;
+    background-color: #a8d8f0;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(255,255,255,0.35)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(232,66,122,0.22)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(255,255,255,0.28)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(232,66,122,0.18)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(255,255,255,0.32)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(255,255,255,0.25)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
+    background-size: 300px 300px, 300px 300px;
+    background-position: 0 0, 150px 150px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -48,7 +46,7 @@ body {
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: #1a2a3a;
     z-index: 2;
     width: 100%;
     max-width: 900px;
@@ -64,32 +62,34 @@ body {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
+    color: #1a2a3a;
 }
 
 .hero-desc {
     font-size: 1.4rem;
     margin-bottom: 40px;
-    opacity: 0.95;
+    opacity: 0.85;
+    color: #1a2a3a;
 }
 
 .submit-btn {
     display: inline-block;
-    background: #D8315B;
+    background: #e8427a;
     color: white;
     font-size: 1.6rem;
     font-weight: bold;
     padding: 18px 52px;
-    border-radius: 50px;
+    border-radius: 25px;
     text-decoration: none;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(232, 66, 122, 0.35);
     transition: all 0.3s ease;
     border: 3px solid #ffffff;
 }
 
 .submit-btn:hover {
     transform: scale(1.05) translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    background: #FF4D73;
+    box-shadow: 0 12px 30px rgba(232, 66, 122, 0.5);
+    background: #ff5a8a;
 }
 
 .corner-crunch {
@@ -102,15 +102,12 @@ body {
     z-index: 5;
 }
 
-/* ── FAQ Speech Bubble ── */
 .faq-bubble {
     position: absolute;
-
     bottom: 230px;
     left: 90px;
-
     z-index: 10;
-    background: linear-gradient(135deg, #7de8c8 0%, #2a9d7f 40%, #1a6b58 100%);
+    background: linear-gradient(135deg, #f9a8d4 0%, #e8427a 50%, #c2185b 100%);
     color: white;
     font-size: 1rem;
     font-weight: 800;
@@ -122,9 +119,9 @@ body {
     padding: 12px 22px;
     min-width: 80px;
     box-shadow:
-        0 0 0 2.5px rgba(100, 182, 241, 0.45),
-        0 4px 18px rgba(42, 157, 127, 0.6),
-        0 1px 0 rgba(255,255,255,0.2) inset;
+        0 0 0 2.5px rgba(255, 255, 255, 0.6),
+        0 4px 18px rgba(232, 66, 122, 0.45),
+        0 1px 0 rgba(255,255,255,0.3) inset;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: visible;
 }
@@ -137,8 +134,8 @@ body {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 13px solid #1a6b58;
-    filter: drop-shadow(0 2px 3px rgba(42, 157, 127, 0.4));
+    border-top: 13px solid #c2185b;
+    filter: drop-shadow(0 2px 3px rgba(232, 66, 122, 0.4));
 }
 
 .faq-bubble .bubble-shine {
@@ -147,7 +144,7 @@ body {
     left: 10px;
     right: 10px;
     height: 38%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.0) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.0) 100%);
     border-radius: 12px 12px 0 0;
     pointer-events: none;
 }
@@ -155,25 +152,24 @@ body {
 .faq-bubble:hover {
     transform: scale(1.08) translateY(-3px);
     box-shadow:
-        0 0 0 2.5px rgba(100, 182, 241, 0.65),
-        0 8px 28px rgba(42, 157, 127, 0.75),
-        0 1px 0 rgba(255,255,255,0.2) inset;
+        0 0 0 2.5px rgba(255, 255, 255, 0.8),
+        0 8px 28px rgba(232, 66, 122, 0.6),
+        0 1px 0 rgba(255,255,255,0.3) inset;
 }
 
 .faq-bubble:active {
     transform: scale(0.97) translateY(0);
 }
 
-/* ── Paths Section ── */
 .paths-section {
-    background-color: #0a1a2b;
+    background-color: #fce4ec;
     background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(42,157,127,0.11)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(100,182,241,0.11)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(42,157,127,0.12)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(100,182,241,0.10)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(232,66,122,0.18)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(168,216,240,0.45)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(232,66,122,0.14)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(168,216,240,0.40)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(232,66,122,0.16)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(168,216,240,0.38)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
     background-size: 300px 300px, 300px 300px;
     background-position: 0 0, 150px 150px;
     padding: 80px 20px 100px;
-    color: white;
+    color: #1a2a3a;
 }
 
 .paths-container {
@@ -191,11 +187,11 @@ body {
 .grid-image {
     border-radius: 16px;
     overflow: hidden;
-    background: #1a2f45;
+    background: #c8e6f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4a7090;
+    color: #5a8aa0;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -219,7 +215,7 @@ body {
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     border-radius: 16px;
 }
 
@@ -242,20 +238,23 @@ body {
 }
 
 .flip-card-front {
-    background: #1e3f32;
-    border: 2px solid #0c1f35;
+    background: #a8d8f0;
+    border: 2.5px solid #ffffff;
+    color: #1a2a3a;
 }
 
 .flip-card-back {
-    background: #B24361;
-    border: 2px solid #1e3f32;
+    background: #e8427a;
+    border: 2.5px solid #ffffff;
     transform: rotateY(180deg);
+    color: white;
 }
 
 .flip-card h3 {
     font-size: 1.6rem;
     margin: 0 0 16px;
     line-height: 1.2;
+    font-weight: 800;
 }
 
 .flip-card p {
@@ -265,12 +264,11 @@ body {
     line-height: 1.45;
 }
 
-/* ── FAQ Modal ── */
 .faq-overlay {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(8, 18, 32, 0.82);
+    background: rgba(26, 42, 58, 0.55);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     display: flex;
@@ -287,8 +285,8 @@ body {
 }
 
 .faq-modal {
-    background: linear-gradient(160deg, #142236 0%, #0c1f35 100%);
-    border: 1.5px solid rgba(100, 182, 241, 0.3);
+    background: linear-gradient(160deg, #e8f5fd 0%, #fce4ec 100%);
+    border: 2px solid rgba(232, 66, 122, 0.25);
     border-radius: 24px;
     padding: 48px 44px 44px;
     max-width: 580px;
@@ -297,9 +295,9 @@ body {
     overflow-y: auto;
     position: relative;
     box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06),
-        0 24px 60px rgba(0,0,0,0.6),
-        0 0 40px rgba(42, 157, 127, 0.15);
+        0 0 0 1px rgba(255,255,255,0.8),
+        0 24px 60px rgba(0,0,0,0.15),
+        0 0 40px rgba(168, 216, 240, 0.3);
     transform: translateY(24px) scale(0.97);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -314,7 +312,7 @@ body {
     right: 20px;
     background: none;
     border: none;
-    color: rgba(255,255,255,0.5);
+    color: rgba(26, 42, 58, 0.45);
     font-size: 1.8rem;
     cursor: pointer;
     line-height: 1;
@@ -324,13 +322,13 @@ body {
 }
 
 .faq-close:hover {
-    color: white;
-    background: rgba(42, 157, 127, 0.3);
+    color: #e8427a;
+    background: rgba(232, 66, 122, 0.1);
 }
 
 .faq-title {
     font-family: 'Vipnagorgialla', 'Space Grotesk', sans-serif;
-    color: white;
+    color: #1a2a3a;
     font-size: 2rem;
     margin: 0 0 32px;
     text-align: center;
@@ -346,20 +344,20 @@ body {
 .faq-item {
     border-radius: 12px;
     overflow: hidden;
-    border: 1.5px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.04);
+    border: 1.5px solid rgba(168, 216, 240, 0.6);
+    background: rgba(255, 255, 255, 0.6);
     transition: border-color 0.2s;
 }
 
 .faq-item.open {
-    border-color: rgba(100, 182, 241, 0.5);
+    border-color: #e8427a;
 }
 
 .faq-question {
     width: 100%;
     background: none;
     border: none;
-    color: white;
+    color: #1a2a3a;
     font-size: 1.05rem;
     font-weight: 700;
     text-align: left;
@@ -373,12 +371,12 @@ body {
 }
 
 .faq-question:hover {
-    background: rgba(42, 157, 127, 0.12);
+    background: rgba(232, 66, 122, 0.07);
 }
 
 .faq-arrow {
     font-size: 1.2rem;
-    color: #64b6f1;
+    color: #e8427a;
     transition: transform 0.3s ease;
     flex-shrink: 0;
     display: inline-block;
@@ -402,11 +400,10 @@ body {
 
 .faq-answer p {
     margin: 0;
-    color: rgba(255,255,255,0.78);
+    color: rgba(26, 42, 58, 0.75);
     font-size: 1rem;
     line-height: 1.55;
-    padding-top: 4px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(168, 216, 240, 0.5);
     padding-top: 14px;
 }
 

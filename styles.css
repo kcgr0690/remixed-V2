@@ -10,11 +10,19 @@
     box-sizing: border-box;
 }
 
+/* Full-page note pattern on body so it covers hero + paths section */
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    /* Two staggered layers, 300×300px tiles, notes at 55–60px, opacity ~0.13–0.15 */
+    background-color: #0c1f35;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(42,157,127,0.11)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(100,182,241,0.11)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(42,157,127,0.12)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(100,182,241,0.10)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
+    background-size: 300px 300px, 300px 300px;
+    background-position: 0 0, 150px 150px;
 }
 
 .top-banner {
@@ -29,17 +37,7 @@ body {
 
 .hero {
     min-height: 100vh;
-    background-color: #0c1f35;
-    /*
-      Tiled SVG pattern of ♩ ♫ ♪ characters rendered as an image —
-      they live inside a data URI so they cannot be selected as text.
-      Two layers: a staggered offset repeat so rows don't line up.
-    */
-    background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10'  y='40'  font-size='22' fill='rgba(100,182,241,0.07)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='70'  y='95'  font-size='18' fill='rgba(100,182,241,0.07)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='55'  y='50'  font-size='14' fill='rgba(42,157,127,0.06)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='80'  y='30'  font-size='16' fill='rgba(100,182,241,0.06)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='20'  y='85'  font-size='20' fill='rgba(42,157,127,0.06)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3C/svg%3E");
-    background-size: 120px 120px, 120px 120px;
-    background-position: 0 0, 60px 60px;   /* offset second layer by half a tile */
+    background-color: transparent;
     width: 100%;
     display: flex;
     align-items: center;
@@ -168,7 +166,12 @@ body {
 
 /* ── Paths Section ── */
 .paths-section {
-    background: #0a1a2b;
+    background-color: #0a1a2b;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(100,182,241,0.13)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(42,157,127,0.11)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(100,182,241,0.11)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(42,157,127,0.12)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(100,182,241,0.10)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
+    background-size: 300px 300px, 300px 300px;
+    background-position: 0 0, 150px 150px;
     padding: 80px 20px 100px;
     color: white;
 }

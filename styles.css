@@ -17,7 +17,6 @@ body {
     overflow-x: hidden;
 }
 
-
 .top-banner {
     background: #0c1f35;
     color: white;
@@ -28,10 +27,19 @@ body {
     width: 100%;
 }
 
-
 .hero {
     min-height: 100vh;
-    background: #0c1f35;
+    background-color: #0c1f35;
+    /*
+      Tiled SVG pattern of ♩ ♫ ♪ characters rendered as an image —
+      they live inside a data URI so they cannot be selected as text.
+      Two layers: a staggered offset repeat so rows don't line up.
+    */
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='10'  y='40'  font-size='22' fill='rgba(100,182,241,0.07)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='70'  y='95'  font-size='18' fill='rgba(100,182,241,0.07)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='55'  y='50'  font-size='14' fill='rgba(42,157,127,0.06)'  font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ctext x='80'  y='30'  font-size='16' fill='rgba(100,182,241,0.06)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='20'  y='85'  font-size='20' fill='rgba(42,157,127,0.06)'  font-family='serif'%3E%E2%99%AA%3C/text%3E%3C/svg%3E");
+    background-size: 120px 120px, 120px 120px;
+    background-position: 0 0, 60px 60px;   /* offset second layer by half a tile */
     width: 100%;
     display: flex;
     align-items: center;
@@ -96,21 +104,15 @@ body {
     z-index: 5;
 }
 
-
+/* ── FAQ Speech Bubble ── */
 .faq-bubble {
     position: absolute;
 
-    bottom: 230px; 
-    left: 90px; 
+    bottom: 230px;
+    left: 90px;
 
     z-index: 10;
-
-    background: linear-gradient(
-        135deg,
-        #7de8c8 0%, 
-        #2a9d7f 40%,     
-        #1a6b58 100%   
-    );
+    background: linear-gradient(135deg, #7de8c8 0%, #2a9d7f 40%, #1a6b58 100%);
     color: white;
     font-size: 1rem;
     font-weight: 800;
@@ -121,13 +123,10 @@ body {
     border-radius: 20px;
     padding: 12px 22px;
     min-width: 80px;
-
-
     box-shadow:
         0 0 0 2.5px rgba(100, 182, 241, 0.45),
         0 4px 18px rgba(42, 157, 127, 0.6),
         0 1px 0 rgba(255,255,255,0.2) inset;
-
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: visible;
 }
@@ -144,18 +143,13 @@ body {
     filter: drop-shadow(0 2px 3px rgba(42, 157, 127, 0.4));
 }
 
-
 .faq-bubble .bubble-shine {
     position: absolute;
     top: 5px;
     left: 10px;
     right: 10px;
     height: 38%;
-    background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.38) 0%,
-        rgba(255,255,255,0.0) 100%
-    );
+    background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.0) 100%);
     border-radius: 12px 12px 0 0;
     pointer-events: none;
 }
@@ -172,6 +166,7 @@ body {
     transform: scale(0.97) translateY(0);
 }
 
+/* ── Paths Section ── */
 .paths-section {
     background: #0a1a2b;
     padding: 80px 20px 100px;
@@ -267,7 +262,7 @@ body {
     line-height: 1.45;
 }
 
-/* ── FAQ Modal Overlay ── */
+/* ── FAQ Modal ── */
 .faq-overlay {
     position: fixed;
     inset: 0;
@@ -425,32 +420,17 @@ body {
             "card4";
     }
 
-    .flip-card {
-        height: 320px;
-    }
-
-    .grid-image {
-        height: 220px;
-    }
-
-    .corner-crunch {
-        width: 120px;
-        bottom: 30px;
-        left: 10px;
-    }
+    .flip-card { height: 320px; }
+    .grid-image { height: 220px; }
+    .corner-crunch { width: 120px; bottom: 30px; left: 10px; }
 
     .faq-bubble {
         bottom: 200px;
-        left: 24px; 
+        left: 24px;
         font-size: 0.85rem;
         padding: 10px 16px;
     }
 
-    .faq-modal {
-        padding: 36px 24px 32px;
-    }
-
-    .faq-title {
-        font-size: 1.5rem;
-    }
+    .faq-modal { padding: 36px 24px 32px; }
+    .faq-title { font-size: 1.5rem; }
 }

@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Remixed V2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -13,11 +16,12 @@
                 <div class="title">
                     <h1>Remixed V2</h1>
                 </div>
-                <p class="hero-desc">Submit your project in one of the four paths below and ship it with the club.</p>
+                <p class="hero-desc">Pick a path, build something music-related, and ship it with the club.</p>
                 <a href="https://forms.fillout.com/t/turQGrCKExus" target="_blank" class="submit-btn">Submit here!</a>
             </div>
 
             <img class="corner-crunch" src="https://github.com/kcgr0690/remixed-V2/blob/main/crunch_pink.png?raw=true" alt="Crunch">
+            <img class="corner-crunch-right" src="https://github.com/kcgr0690/remixed-V2/blob/main/image%20(8).png?raw=true" alt="Crunch right">
 
             <button class="faq-bubble" onclick="openFaq()" aria-label="Open FAQ">
                 FAQ
@@ -31,25 +35,31 @@
             <div class="how-cards">
 
                 <div class="how-card">
-                    <div class="how-icon">🛠️</div>
+                    <div class="how-icon">
+                        <img src="https://github.com/kcgr0690/remixed-V2/blob/main/image%20(9).png?raw=true" alt="Ship a project">
+                    </div>
                     <h3>Ship a project</h3>
-                    <p>Build one of the four music-related paths — a DAW extension or plugin, an AI music recommender, an Oscillart / visual music tool, or a music education app.</p>
+                    <p>Build something music-related — a DAW plugin, an AI recommender, visual music art, or an education tool. At least 5 hours of work required.</p>
                 </div>
 
                 <div class="how-arrow">→</div>
 
                 <div class="how-card">
-                    <div class="how-icon">📋</div>
+                    <div class="how-icon">
+                        <img src="https://github.com/kcgr0690/remixed-V2/blob/main/image%20(10).png?raw=true" alt="Submit your work">
+                    </div>
                     <h3>Submit your work</h3>
-                    <p>Log at least 5 hours of work in your project journal and submit your finished project using the form above. Open to anyone under 19 in Hack Club!</p>
+                    <p>Fill out the submission form with your project link and a quick write-up. Open to any Hack Club member under 19.</p>
                 </div>
 
                 <div class="how-arrow">→</div>
 
                 <div class="how-card">
-                    <div class="how-icon">🎁</div>
-                    <h3>Get rewarded</h3>
-                    <p>Earn Spotify Premium grants, album credits, artist merch, and more. Ship something great and get featured on the Hack Club site!</p>
+                    <div class="how-icon">
+                        <img src="https://github.com/kcgr0690/remixed-V2/blob/main/crunch_green_spotify%20(1).png?raw=true" alt="Get prizes">
+                    </div>
+                    <h3>Get prizes</h3>
+                    <p>Score Spotify Premium grants, album credits, artist merch, and a chance to get featured on the Hack Club site.</p>
                 </div>
 
             </div>
@@ -96,7 +106,7 @@
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <h3>Oscillart / Visual Music</h3>
-                            <p>Make something where music creates visuals (or visuals create music) – waveform art, reactive visuals, sonification</p>
+                            <p>Make something where music creates visuals (or visuals create music) — waveform art, reactive visuals, sonification</p>
                         </div>
                         <div class="flip-card-back">
                             <h3>Oscillart / Visual Music</h3>
@@ -182,6 +192,34 @@
                 if (!isOpen) item.classList.add('open');
             }
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFaq(); });
+
+            /* ── Scrollbar color shift as user scrolls ── */
+            (function() {
+                const root = document.documentElement;
+                function updateScrollbar() {
+                    const scrolled = window.scrollY;
+                    const total    = document.body.scrollHeight - window.innerHeight;
+                    const pct      = Math.min(scrolled / total, 1);
+
+                    // Blue (#a8d8f0) → purple (#d8b4f8) → pink (#fce4ec)
+                    let r, g, b;
+                    if (pct < 0.5) {
+                        const t = pct / 0.5;
+                        r = Math.round(168 + (216 - 168) * t);
+                        g = Math.round(216 + (180 - 216) * t);
+                        b = Math.round(240 + (248 - 240) * t);
+                    } else {
+                        const t = (pct - 0.5) / 0.5;
+                        r = Math.round(216 + (252 - 216) * t);
+                        g = Math.round(180 + (228 - 180) * t);
+                        b = Math.round(248 + (236 - 248) * t);
+                    }
+                    const col = `rgb(${r},${g},${b})`;
+                    root.style.setProperty('--sb-thumb', col);
+                }
+                window.addEventListener('scroll', updateScrollbar, { passive: true });
+                updateScrollbar();
+            })();
         </script>
 
     </body>

@@ -156,6 +156,80 @@ body {
     transform: scale(0.97) translateY(0);
 }
 
+.how-section {
+    background-color: #d8b4f8;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='30'  y='100' font-size='55' fill='rgba(255,255,255,0.30)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='180' y='240' font-size='50' fill='rgba(255,255,255,0.22)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3Ctext x='130' y='140' font-size='44' fill='rgba(255,255,255,0.25)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Ctext x='200' y='80'  font-size='48' fill='rgba(255,255,255,0.20)' font-family='serif'%3E%E2%99%AB%3C/text%3E%3Ctext x='50'  y='210' font-size='58' fill='rgba(255,255,255,0.28)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='220' y='270' font-size='42' fill='rgba(255,255,255,0.22)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3C/svg%3E");
+    background-size: 300px 300px, 300px 300px;
+    background-position: 0 0, 150px 150px;
+    padding: 70px 20px 80px;
+    color: #4a1d7a;
+}
+
+.how-title {
+    font-family: 'Vipnagorgialla', 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 48px;
+    color: #4a1d7a;
+    letter-spacing: 0.03em;
+}
+
+.how-cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.how-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.55);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 20px rgba(74, 29, 122, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.how-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(74, 29, 122, 0.18);
+}
+
+.how-icon {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.how-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #4a1d7a;
+}
+
+.how-card p {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin: 0;
+    color: #5b2d8a;
+    opacity: 0.9;
+}
+
+.how-arrow {
+    font-size: 2rem;
+    color: rgba(74, 29, 122, 0.45);
+    flex-shrink: 0;
+    font-weight: 900;
+}
+
 .paths-section {
     background-color: #fce4ec;
     background-image:
@@ -441,4 +515,11 @@ body {
     .hero-content h1 { font-size: 3rem; }
     .hero-desc { font-size: 1.1rem; }
     .submit-btn { font-size: 1.2rem; padding: 14px 36px; }
+
+    .how-cards {
+        flex-direction: column;
+    }
+    .how-arrow {
+        transform: rotate(90deg);
+    }
 }

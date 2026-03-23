@@ -148,9 +148,9 @@ body {
 
 .corner-crunch-right {
     position: absolute;
-    top: 20px;
-    right: 10px;
-    width: 180px;
+    top: -40px;
+    right: -65px;
+    width: 350px;
     height: auto;
     z-index: 5;
     cursor: pointer;

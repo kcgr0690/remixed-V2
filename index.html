@@ -38,7 +38,7 @@
                     <div class="how-icon">
                         <img src="https://github.com/kcgr0690/remixed-V2/blob/main/image%20(9).png?raw=true" alt="Ship a project">
                     </div>
-                    <h3>Ship a project</h3>
+                    <h3>Create a music-related project</h3>
                     <p>Build something music-related — a DAW plugin, an AI recommender, visual music art, or an education tool. At least 5 hours of work required.</p>
                 </div>
 
@@ -48,8 +48,8 @@
                     <div class="how-icon">
                         <img src="https://github.com/kcgr0690/remixed-V2/blob/main/image%20(10).png?raw=true" alt="Submit your work">
                     </div>
-                    <h3>Submit your work</h3>
-                    <p>Fill out the submission form with your project link and a quick write-up. Open to any Hack Club member under 19.</p>
+                    <h3>Ship & Submit</h3>
+                    <p>Fill out the submission form with your project link and a description to earn notes!</p>
                 </div>
 
                 <div class="how-arrow">→</div>
@@ -59,7 +59,7 @@
                         <img src="https://github.com/kcgr0690/remixed-V2/blob/main/crunch_green_spotify%20(1).png?raw=true" alt="Get prizes">
                     </div>
                     <h3>Get prizes</h3>
-                    <p>Score Spotify Premium grants, album credits, artist merch, and a chance to get featured on the Hack Club site.</p>
+                    <p>Spend notes to get Spotify Premium grants, album credits, artist merch, headphone grants, and more!</p>
                 </div>
 
             </div>
@@ -193,7 +193,6 @@
             }
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFaq(); });
 
-            /* ── Scrollbar color shift as user scrolls ── */
             (function() {
                 const root = document.documentElement;
                 function updateScrollbar() {
@@ -201,7 +200,6 @@
                     const total    = document.body.scrollHeight - window.innerHeight;
                     const pct      = Math.min(scrolled / total, 1);
 
-                    // Blue (#a8d8f0) → purple (#d8b4f8) → pink (#fce4ec)
                     let r, g, b;
                     if (pct < 0.5) {
                         const t = pct / 0.5;
